@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt2</title>
+</head>
+<body>
+    Giá trị độ C:
+    <input type="number" id="nhietdo">
+    <button onclick="addNumber()">Chuyển đổi</button>
+
+    <script>
+        function addNumber() {
+            let c = document.getElementById('nhietdo').value;
+            let f = parseFloat(c) / 5 * 9 + 32
+            document.write('f=' + f)
+        }
+    </script>
+
+
+</body>
+</html>

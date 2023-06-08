@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt1</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Điểm Lý</td>
+        <td> <input type="number" id="ly"><br/></td>
+    </tr>
+    <tr>
+        <td>Điểm Hóa:</td>
+        <td>  <input type="number" id="hoa"><br/></td>
+    </tr>
+    <tr>
+        <td>Điểm Sinh:</td>
+        <td>   <input type="number" id="sinh"><br/></td>
+    </tr>
+    <tr>
+        <td>  <button onclick="addNumber()">Điểm trung bình</td>
+        <p id="result"></p>
+    </tr>
+</table>
+
+</table>
+    <script>
+        function addNumber() {
+        let l = document.getElementById('ly').value;
+        let h = document.getElementById('hoa').value;
+        let s = document.getElementById('sinh').value;
+        let tb = (parseFloat(l)+parseFloat(h)+parseFloat(s))/3;
+            alert(tb)
+
+        //document.getElementById('result').innerHTML =tb
+        }
+    </script>
+</body>
+</html>

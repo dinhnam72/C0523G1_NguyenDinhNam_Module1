@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ung_dung_may_tinh</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="4">Caculator</th>
+            </tr>
+        </thead>
+
+    <tbody>
+        <tr>
+            <td colspan="2">
+                <input type="number" id="number1">
+            </td>
+            <td colspan="2">
+                <input type="number" id="number2">
+            </td>
+        </tr>
+        <tr>
+            <td id="add">
+                <button onclick="addNumber()">Addition(+)</button>
+            </td>
+            <td id="sub">
+                <button onclick="subNumber()">Subtraction(-)</button>
+            </td>
+            <td id="mul">
+                <button onclick="mulNumber()">Multiplication(x)</button>
+            </td>
+            <td id="div">
+                <button onclick="divNumber()">Division(/)</button>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+    Result:
+    <p id="result"></p>
+    <script>
+        function addNumber() {
+            let number1=document.getElementById('number1').value;
+            let number2=document.getElementById('number2').value;
+                add = +number1+(+number2);
+            document.getElementById('result').innerHTML=add
+            }
+        function subNumber() {
+            let number1=document.getElementById('number1').value;
+            let number2=document.getElementById('number2').value;
+                sub = +number1-(+number2);
+            document.getElementById('result').innerHTML =sub
+            }
+        function mulNumber() {
+            let number1=document.getElementById('number1').value;
+            let number2=document.getElementById('number2').value;
+                mul = +number1*(+number2);
+            document.getElementById('result').innerHTML =mul
+            }
+        function divNumber() {
+            let number1=document.getElementById('number1').value;
+            let number2=document.getElementById('number2').value;
+                div = +number1/(+number2);
+            document.getElementById('result').innerHTML =div
+            }
+
+
+    </script>
+</body>
+</html>
