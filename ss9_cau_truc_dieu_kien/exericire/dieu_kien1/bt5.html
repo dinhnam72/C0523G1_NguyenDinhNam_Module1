@@ -2,9 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>bt5</title>
+    <style>
+        table, tbody, tr, td {
+            border: 1px solid;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+    </style>
 </head>
 <body>
-$END$
+<table>
+    <thead>
+        <tr>
+            <th colspan="8">Xếp loại học lực môn Toán</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Stt</td>
+            <td>Tên</td>
+            <td style="width: 90px">Điểm miệng</td>
+            <td style="width: 90px">Điểm 15 phút</td>
+            <td style="width: 90px">Điểm giữa kỳ</td>
+            <td style="width: 90px">Điểm cuối kỳ</td>
+            <td style="width: 90px">ĐTB</td>
+            <td style="width: 90px">Xếp loại</td>
+        </tr>
+        <tr >
+            <td>1</td>
+            <td>Nguyễn Văn A</td>
+            <td>
+                <input style="width: 90px;" type="number" id="oral-point">
+            </td>
+            <td>
+                <input style="width: 90px; type="number" id="point">
+            </td>
+            <td>
+                <input style="width: 90px; type="number" id="midterm-score">
+            </td>
+            <td>
+                <input style="width: 90px; type="number" id="end-point">
+            </td>
+            <td id="score"></td>
+            <td id="grade"></td>
+        </tr>
+    </tbody>
+</table>
+    <button onclick="mediumScore()">Result</button>
+<script>
+    function mediumScore() {
+        let a = +document.getElementById("oral-point").value;
+        let b = +document.getElementById("point").value;
+        let c = +document.getElementById("midterm-score").value;
+        let d = +document.getElementById("end-point").value;
+        score = (a+b+c*2+d*3)/7
+        document.getElementById("score").innerHTML=score.toFixed(2)
+        if (score>=8){
+            document.getElementById('grade').innerHTML='Giỏi'
+        }else if (score>=6.5){
+            document.getElementById('grade').innerHTML='Khá'
+        }else if (score>=5) {
+            document.getElementById('grade').innerHTML = 'Trung bình'
+        }else {
+            document.getElementById('grade').innerHTML = 'Yếu'
+        }
+
+    }
+
+</script>
 </body>
 </html>

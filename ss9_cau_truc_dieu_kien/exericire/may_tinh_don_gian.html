@@ -2,9 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>may_tinh_don_gian</title>
 </head>
 <body>
-$END$
+<table>
+    <tr>
+        <td colspan="4"><input id="result" type="text"></td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="addExpression(1)">1</button>
+        </td>
+        <td>
+            <button onclick="addExpression(2)">2</button>
+        </td>
+        <td>
+            <button onclick="addExpression(3)">3</button>
+        </td>
+        <td>
+            <button onclick="addExpression('+')">+</button>
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <button onclick="addExpression(4)">4</button>
+        </td>
+        <td>
+            <button onclick="addExpression(5)">5</button>
+        </td>
+        <td>
+            <button onclick="addExpression(6)">6</button>
+        </td>
+        <td>
+            <button onclick="addExpression('-')">-</button>
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <button onclick="addExpression(7)">7</button>
+        </td>
+        <td>
+            <button onclick="addExpression(8)">8</button>
+        </td>
+        <td>
+            <button onclick="addExpression(9)">9</button>
+        </td>
+        <td>
+            <button onclick="addExpression('*')">x</button>
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <button onclick="clearmen()">C</button>
+        </td>
+        <td>
+            <button onclick="addExpression('0')">0</button>
+        </td>
+        <td>
+            <button onclick="calculation()">=</button>
+        </td>
+        <td>
+            <button onclick="addExpression('/')" )>/</button>
+        </td>
+
+    </tr>
+</table>
+<script>
+    let expression = "";
+
+    function addExpression(str) {
+        expression += str;
+        document.getElementById("result").value = expression;
+    }
+
+    function calculation() {
+        expression = eval(expression);
+        document.getElementById("result").value = expression;
+
+    }
+
+    function clearmen() {
+        expression = "";
+        document.getElementById("result").value = expression;
+    }
+</script>
+
 </body>
 </html>

@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>bt1</title>
 </head>
 <body>
-$END$
+    <table>
+        <tr>
+            <td>Độ C</td>
+            <td><input type="number" id="c"></td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="addExpression()">F</button>
+            </td>
+            <td id="result"></td>
+        </tr>
+    </table>
+<script>
+    function addExpression() {
+        let result = document.getElementById('result').value;
+        let c = document.getElementById('c').value;
+        result = c*9/5+32;
+        document.getElementById('result').innerHTML =result ;
+    }
+</script>
 </body>
 </html>

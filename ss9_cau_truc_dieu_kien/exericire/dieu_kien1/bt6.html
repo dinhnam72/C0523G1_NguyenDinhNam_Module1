@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>bt6</title>
 </head>
 <body>
-$END$
+Chú thích:<br/>
+Doanh thu dưới 100 triệu đồng thì không có hoa hồng;<br/>
+Doanh thu 100 triệu đồng trở lên thì tiền hoa hồng 5%;<br/>
+Doanh thu 200 triệu đồng trở lên thì tiền hoa hồng 6%;<br/>
+Doanh thu 500 triệu đồng trở lên thì tiền hoa hồng 10%;<br/>
+Doanh thu 1 tỉ đồng trở lên thì tiền hoa hồng 15%;<br/>
+<table>
+    <tr>
+        <td>Doanh thu:(triệu đồng)</td>
+        <td><input type="number" id="doanh-thu"></td>
+    </tr>
+    <tr>
+        <td>Hoa hồng:(triệu đồng)</td>
+        <td id="hoa-hong"></td>
+    </tr>
+</table>
+<button onclick="addExpression()">Kết quả</button>
+<script>
+    function addExpression() {
+        let doanhThu = document.getElementById("doanh-thu").value;
+        if (doanhThu >= 1000 ){
+            hoaHong = doanhThu*15/100;
+        }else if (doanhThu >= 500){
+            hoaHong = doanhThu*10/100;
+        }else if (doanhThu >= 200){
+            hoaHong = doanhThu*6/100;
+        }else if (doanhThu >= 100){
+            hoaHong = doanhThu*5/100;
+        }else {
+            hoaHong = 0;
+        }
+    document.getElementById("hoa-hong").innerHTML=hoaHong;
+    }
+</script>
+
 </body>
 </html>
