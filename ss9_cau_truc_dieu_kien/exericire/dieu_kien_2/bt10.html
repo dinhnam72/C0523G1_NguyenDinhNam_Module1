@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt10</title>
+</head>
+<body>
+<div>
+    <h2>Bậc giá điện bán lẻ sinh hoạt</h2><br>
+    <span>Bậc 1: Từ 0-50kWh: 1.728 đồng/kWh</span><br>
+    <span>Bậc 2: Từ 51 – 100 kWh: 1.786 đồng/kWh</span><br>
+    <span>Bậc 3: Từ 101 – 200 kWh: 2.074 đồng/kWh</span><br>
+    <span>Bậc 4: Từ 201 – 300 kWh: 2.612 đồng/kWh </span><br>
+    <span>Bậc 5: Từ 301 – 400 kWh: 2.919 đồng/kWh </span><br>
+    <span>Bậc 6: Từ 401 kWh trở lên: 3.015 đồng/kWh</span><br>
+</div>
+<table>
+    <tr>
+        <td>Nhập số điện (kWh):</td>
+        <td><input type="number" id="demo"></td>
+    </tr>
+    <tr>
+        <td>Tiền (đồng):</td>
+        <td id="money"></td>
+    </tr>
+</table>
+<button onclick="addMoney()">Result</button>
+<script>
+    function addMoney() {
+        let kWh = +document.getElementById('demo').value;
+        if (kWh >0){
+            if (kWh <= 50) {
+                money = kWh * 1728;
+            } else if (kWh < 100) {
+                money = 50 * 1728 + (kWh - 50) * 1786;
+            } else if (kWh < 200) {
+                money = 50 * 1728 + 50 * 1786 + (kWh - 100) * 2074;
+            } else if (kWh < 300) {
+                money = 50 * 1728 + 50 * 1786 + 100 * 2074 + (kWh - 200) * 2612;
+            } else if (kWh < 400) {
+                money = 50 * 1728 + 50 * 1786 + 100 * 2074 + 100 * 2612 + (kWh - 300) * 2919;
+            } else {
+                money = 50 * 1728 + 50 * 1786 + 100 * 2074 + 100 * 2612 + 100 * 2919 + (kWh - 400) * 3015;
+            }
+            document.getElementById('money').innerHTML = money;
+        } else {
+            document.getElementById('money').innerHTML = 'Không có kết quả nếu giá trị là âm';
+        }
+
+
+    }
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt9</title>
+</head>
+<body>
+<script>
+    let a = +prompt('Nhập vào a');
+    let b = +prompt('Nhập vào b');
+    let c = +prompt('Nhập vào c');
+    if (a > 0 && b > 0 && c > 0) {
+        if ((a + b > c) && (b + c > a) && (c + a > b)) {
+            alert('a,b,c là 3 cạnh của một tam giác');
+
+        } else {
+            alert('a,b,c khồng phải là 3 cạnh của một tam giác');
+        }
+    } else {
+        alert('a,b,c không phải là 3 cạnh của một tam giác');
+    }
+</script>
+</body>
+</html>

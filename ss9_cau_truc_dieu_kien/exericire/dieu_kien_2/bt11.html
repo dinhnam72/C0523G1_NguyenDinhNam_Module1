@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt11</title>
+    <style>
+        table, tr, td {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Bậc</td>
+        <td>Thu nhập tháng (triệu đồng)</td>
+        <td>Số thuế phải nộp( triệu đồng)</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>TN <= 5</td>
+        <td>TNx5%</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>5 < TN <= 10</td>
+        <td>TNx15%</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>10 < TN</td>
+        <td>TNx15%</td>
+    </tr>
+</table>
+<script>
+    let money = +prompt('Nhập số tiền lương');
+    if (money > 0) {
+        if (money <= 5) {
+            tax = money * 5 / 100;
+        } else if (5 < money && money <= 10) {
+            tax = money * 10 / 100;
+        } else {
+            tax = money * 15 / 100;
+        }
+        alert('Tiền thuế của bạn là ' + tax + ' đồng');
+    } else {
+        alert('Không có kết quả nếu giá trị là âm')
+    }
+</script>
+</body>
+</html>
