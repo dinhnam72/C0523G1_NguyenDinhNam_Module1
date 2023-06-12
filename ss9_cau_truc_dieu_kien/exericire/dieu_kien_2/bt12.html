@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt12</title>
+</head>
+<body>
+<h2>Công thức tính lãi suất kép ngân hàng </h2><br>
+<h3>A = P*(1 + r)^n</h3>
+<p>Trong đó:</span></p>
+<p>- A là số tiền mà quý khách nhận được trong tương lai.</span></p>
+<p>- P là số tiền gốc quý khách bỏ ra để đầu tư ban đầu.</span></p>
+<p>- r là lãi suất hằng năm.</span></p>
+<p>- n là số chu kỳ thực hiện lãi kép.</span></p>
+<hr>
+<label for="P">Nhập vào số tiền gốc: </label>
+<input id="P" type="number" value="1000000"><br>
+<label for="r">Nhập vào lãi suất ngân hàng % theo tháng: </label>
+<input id="r" type="number" value="0.5"><span>%</span><br>
+<label for="n">Nhập vào số tháng bạn gửi tiết kiệm: </label>
+<input id="n" type="number">
+<hr>
+<button onclick="tinhTien()">Tính tiền</button>
+<span id="result"></span>
+
+<script>
+    function tinhTien() {
+        let p = +document.getElementById('P').value;
+        let r = +document.getElementById('r').value;
+        let n = +document.getElementById('n').value;
+        let result = (p * Math.pow((1 + r / 100), n)).toFixed(0);
+        document.getElementById('result').innerHTML = 'Số tiền mà bạn nhận được:' + result
+    }
+</script>
+</body>
+</html>
