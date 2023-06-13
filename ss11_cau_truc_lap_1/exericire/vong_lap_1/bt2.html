@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt2</title>
+</head>
+<body>
+<script>
+    let c = +prompt('Nhập nhiệt độ bạn muốn:');
+    while (c < 120) {
+        if (c < 20) {
+            document.write(c + ':' + ' Hãy tăng nhiệt độ vì quá lạnh'+'<br/>');
+        }else if (c >100) {
+            document.write(c+':'+'Hãy giảm nhiệt độ vì quá nóng'+'<br/>');
+        }else {
+            document.write(c+':'+'Nhiệt độ đảm bảm'+'<br/>');
+        }
+        c++;
+        break;
+    }
+
+</script>
+</body>
+</html>

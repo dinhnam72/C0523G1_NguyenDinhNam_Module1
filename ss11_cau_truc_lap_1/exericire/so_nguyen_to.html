@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>so_nguyen_to</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt('Nhập n số nguyên tố đầu tiên:'));
+    checkN(n);
+
+    function checkN(n) {
+
+        let count = 0;
+        let countSNT = 0;
+        for (let i = 2; i < 10000; i++) {
+            if (countSNT < n) {
+                for (let j = 1; j <= i; j++) {
+                    if (i % j === 0) {
+                        count += 1;
+                    }
+                }
+                if (count === 2) {
+                    document.write(i + '<br/>');
+                    countSNT += 1;
+                }
+                count = 0;
+            } else {
+                break;
+            }
+        }
+    }
+</script>
+</body>
+</html>
