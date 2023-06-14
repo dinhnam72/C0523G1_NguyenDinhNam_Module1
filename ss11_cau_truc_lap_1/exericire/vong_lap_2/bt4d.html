@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>bt4d</title>
 </head>
 <body>
-$END$
+<script>
+    for (let i = 1; i < 8; i++) {
+        for (let j = 1; j < 11; j++) {
+
+            if (i > 1 && i < 7) {
+                if (j > 1 && j < 10) {
+                    document.write(`&nbsp&nbsp`);
+                } else {
+                    document.write('*');
+                }
+            }
+            else {
+                    document.write('*');
+                }
+
+
+        }
+        document.write('<br>');
+    }
+</script>
 </body>
 </html>

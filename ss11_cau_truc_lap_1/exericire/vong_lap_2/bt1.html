@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>bt1</title>
 </head>
 <body>
-$END$
+<script>
+    let a = 1;
+    let b = 1;
+    for (let i = 1; i <= 100; i++) {
+        if (i < 3) {
+            c = b;
+        } else {
+            c = a + b;
+            if (i % 2 != 0) {
+                a = c;
+            } else {
+                b = c;
+            }
+        }
+        document.write(c + ' ');
+    }
+</script>
 </body>
 </html>

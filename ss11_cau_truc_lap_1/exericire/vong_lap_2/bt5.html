@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>bt5</title>
 </head>
 <body>
-$END$
+<script>
+    let p = +prompt('Nhập vào số tiền bạn muốn gửi tiết kiệm:');
+    let x = +prompt('Phần trăm tiền lãi mỗi tháng %):');
+    let n = +prompt('Số tháng muốn gửi:');
+    for (let i = 1; i <= n; i++) {
+        lai = p * x / 100;
+        p += lai;
+        document.write('Số tiền của bạn sau' + i + ' tháng :' + p.toFixed(0) + '<br>');
+    }
+
+</script>
 </body>
 </html>
