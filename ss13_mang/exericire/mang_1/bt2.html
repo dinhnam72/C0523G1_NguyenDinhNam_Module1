@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt2</title>
+</head>
+<body>
+<script>
+    let n;
+    do {
+        n = +parseInt(prompt('Nhập số lần bạn muốn:'));
+        if (n <= 0) {
+            alert('Bạn cần nhập số dương. Yêu cầu nhập lại!');
+        }
+    } while (n <= 0);
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        let a = +prompt('Nhập vào phần tử thứ ' + (i + 1));
+        if (arr.indexOf(a) !== -1) {
+            i--;
+        } else {
+            arr[i] = a;
+        }
+    }
+    document.write(arr + '<br/>');
+    let indexMax;
+    let max = arr[0];
+    for (let i = 0; i < n; i++) {
+        if (max > arr[i]) {
+        } else {
+            max = arr[i];
+            indexMax = i;
+        }
+    }
+    document.write('Giá trị lớn nhất là: ' + max + ' vị trí số ' + indexMax);
+</script>
+</body>
+</html>
