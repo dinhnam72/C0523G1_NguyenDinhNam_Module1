@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tu_dien</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Tiếng anh:</td>
+        <td><input type="text" id="english"></td>
+    </tr>
+    <tr>
+        <td>Tiếng việt:</td>
+        <td><input type="text" id="vietNam" ></td>
+    </tr>
+</table>
+<button onclick="result()" id="a1" value="Dịch 1"></button>
+<script>
+    function result() {
+        let eng = ['goodbye', 'hello', 'i love you'];
+        let vNam = ['tạm biệt', 'xin chào', 'tôi yêu bạn'];
+        let check = false;
+        let e = document.getElementById('english').value;
+        for (let i = 0; i < eng.length; i++) {
+            if (e === eng[i]) {
+                check = true;
+                document.getElementById('vietNam').value = vNam[i];
+                break;
+            }
+        }
+        if (check == false) {
+            alert('Không có dữ liệu về từ này');
+        }
+    }
+
+
+</script>
+</body>
+</html>
