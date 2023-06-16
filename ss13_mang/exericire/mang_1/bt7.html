@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>bt3</title>
+    <title>bt7</title>
 </head>
 <body>
 <script>
@@ -17,18 +17,20 @@
     for (let i = 0; i < n; i++) {
         arr[i] = parseInt(prompt('Nhập vào phần tử thứ ' + (i + 1)));
     }
-    let max = arr[0];
-    let tb = 0;
-    for (let i = 0; i < n; i++) {
-        if (max > arr[i]) {
-        } else {
-            max = arr[i];
-        }
-        tb += arr[i];
-        a = tb / arr.length;
-    }
-    document.write(arr + '<br/>' + 'Giá trị lớn nhất là: ' + max + '<br/>' + 'Giá trị trung bình: ' + a);
-</script>
+    let v = +parseInt(prompt('Nhập vào phần tử'));
+    for (let i = 0; i < arr.length; i++) {
 
+        if (arr.indexOf(v) !== -1) {
+            arr.splice(arr.indexOf(v), 1, );
+            arr.push(0);
+            i--;
+        } else {
+        }
+
+    }
+
+    document.write(arr);
+
+</script>
 </body>
 </html>

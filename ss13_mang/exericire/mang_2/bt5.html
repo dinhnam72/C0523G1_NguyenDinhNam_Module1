@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt5</title>
+</head>
+<body>
+<script>
+    let a = prompt("Mời bạn nhập chuỗi đầu tiên:");
+    let b = prompt("Mời bạn nhập chuỗi thứ hai:");
+    a = a.split(' ');
+    b = b.split(' ');
+    let str = true;
+    if (a.length === b.length) {
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] !== b[i]) {
+                str = false;
+                document.write("2 chuỗi này không giống nhau");
+                break;
+            }
+        }
+        if (str) {
+            document.write("2 chuỗi này giống nhau");
+        }
+    } else {
+        document.write("2 chuỗi này không giống nhau");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt5</title>
+</head>
+<body>
+<script>
+
+    let chuoi = prompt("nhập chuổi vào");
+    document.write("Chuỗi bạn vừa nhập là: "+chuoi);
+    let nguyenAm = ['a','e','i','o','u'];
+    let count = 0;
+    for (let i = 0; i < chuoi.length; i++) {
+        if (nguyenAm.indexOf(chuoi[i]) != -1) {
+            count++;
+        }
+    }
+    document.write('<br>' + 'Số nguyên âm có trong chuổi trên là: ' + count);
+
+</script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>bt2</title>
+    <title>bt8</title>
 </head>
 <body>
 <script>
@@ -22,17 +22,9 @@
             arr[i] = a;
         }
     }
-    document.write(arr + '<br/>');
-    let indexMax;
-    let max = arr[0];
-    for (let i = 0; i < n; i++) {
-        if (max > arr[i]) {
-        } else {
-            max = arr[i];
-            indexMax = i;
-        }
-    }
-    document.write('Giá trị lớn nhất là: ' + max + ' vị trí số ' + indexMax);
+    arr.sort() ;
+
+    document.write('Mảng ban đầu ' + arr +'<br>' + 'Mảng sau khi sắp xếp ' + arr.reverse());
 </script>
 </body>
 </html>
