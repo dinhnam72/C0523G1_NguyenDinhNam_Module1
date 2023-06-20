@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>meet_meters</title>
+</head>
+<body>
+<script>
+    let foot = prompt('Nhập số foot: ');
+    let meters = +prompt('Nhập số meters: ');
+
+    function footToMeters(foot) {
+        let meter = 0.305 * foot;
+        return meter;
+    }
+
+    function metersToFoot(meters) {
+        let foot = 3.279 * meters;
+        return foot;
+    }
+
+    document.write(foot + 'foot' + '=' + footToMeters(foot) + 'meter' + '<br>');
+    document.write(meters + 'meter' + '=' + metersToFoot(meters) + 'foot');
+
+</script>
+
+</body>
+</html>

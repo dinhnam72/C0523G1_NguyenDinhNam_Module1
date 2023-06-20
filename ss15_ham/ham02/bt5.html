@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt5</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt('Nhập số nguyên bất kỳ'));
+    let b = parseInt(prompt('Nhập số nguyên bất kỳ'));
+    let c = parseInt(prompt('Nhập số nguyên bất kỳ'));
+    let arr = [];
+    arr.push(a);
+    arr.push(b);
+    arr.push(c);
+    let ketQua = maxNumber(arr);
+
+    function maxNumber(arr) {
+        let max = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+        }
+        return 'Giá trị lớn nhất là: ' + max;
+    }
+
+    document.write(ketQua);
+</script>
+</body>
+</html>
