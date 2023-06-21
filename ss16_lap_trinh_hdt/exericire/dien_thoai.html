@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dien_thoai</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>Charlie (123)</th>
+        <th>Jackie (456)</th>
+    </tr>
+    <tr>
+        <td><textarea id="123"></textarea></td>
+        <td><textarea id="456"></textarea></td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="samsungOfCharlie.textingMess()">Enter the messgae</button>
+        </td>
+        <td>
+            <button onclick="iphoneOfJackie.textingMess()">Enter the message</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="samsungOfCharlie.checkInbox()">Check inbox</button>
+        </td>
+        <td>
+            <button onclick="iphoneOfJackie.checkInbox()">Check inbox</button>
+        </td>
+    </tr>
+
+</table>
+<script>
+    class Mobile {
+        constructor(telephoneNum) {
+            this.battery = 100;
+            this.enteringMess = [];
+            this.inbox = [];
+            this.sentStorage = [];
+            this.status = true;
+            this.telephoneNum = telephoneNum;
+        }
+
+        turnOnPhone() {
+            alert(`The phone is turning on`);
+            this.status = true;
+        }
+
+        turnOffPhone() {
+            alert(`The phone is turning off`);
+            this.status = false;
+        }
+
+        chargingBattery() {
+            alert(`The battery is full`);
+            this.battery = 100;
+        }
+
+        textingMess() {
+            this.enteringMess = prompt(`Let enter your message!!`);
+            let confirmMess = confirm(`Do you want to send?`);
+            if (confirmMess) {
+                let telNumOfReciever = +prompt(`Let enter the number of person you want to send!!`);
+                this.sendMess(this.enteringMess, telNumOfReciever);
+            }
+        }
+
+        sendMess(message, telNumofReciever) {
+            let indexOfReciverNum = storageOfTelNum.indexOf(telNumofReciever);
+            if (indexOfReciverNum !== -1) {
+                alert(`The message is sent to ${telNumofReciever}`);
+                let mobileRecieve = storageOfMobile[indexOfReciverNum];
+                mobileRecieve.recieveMess(`${message} from ${this.telephoneNum}`);
+            } else {
+                alert(`The telephone number is not found`);
+            }
+
+        }
+
+        recieveMess(message) {
+            this.inbox.push(message);
+        }
+
+        checkInbox() {
+            let allMessage = "";
+            for (let i = 0; i < this.inbox.length; i++) {
+                allMessage += this.inbox[i] + "\n";
+
+            }
+            let idScreen = "" + this.telephoneNum;
+            document.getElementById(idScreen).value = allMessage;
+        }
+    }
+
+    let storageOfTelNum = [];
+    let storageOfMobile = [];
+    let samsungOfCharlie = new Mobile(123);
+    let iphoneOfJackie = new Mobile(456);
+    storageOfMobile.push(samsungOfCharlie, iphoneOfJackie);
+    storageOfTelNum.push(samsungOfCharlie.telephoneNum, iphoneOfJackie.telephoneNum);
+</script>
+</body>
+</html>

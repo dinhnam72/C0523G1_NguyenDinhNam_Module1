@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(c) {
+            this.doC = c;
+            this.doF = function () {
+                return c * 9 / 5 + 32;
+            }
+            this.doK = function () {
+                return 273 + c;
+            }
+        }
+    }
+    let c = +prompt('Nhập vào nhiệt độ bạn muốn (C):');
+    let temperature = new Temperature(c);
+    document.write('Độ F sau khi chuyển đổi từ độ C: ' + temperature.doF() + '<br>');
+    document.write('Độ K sau khi chuyển đổi từ độ C: ' + temperature.doK());
+
+</script>
+</body>
+</html>

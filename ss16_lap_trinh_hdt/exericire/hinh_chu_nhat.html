@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hinh_chu_nhat</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1400px" height="700px" style="border:1px solid ;"></canvas>
+<input type="button" onclick="changeSize()" value="Change">
+<script>
+    function Rectangle(rong, dai) {
+        this.rong = rong;
+        this.dai = dai;
+        this.getDienTich = function () {
+            return rong * dai;
+        };
+        this.getChuVi = function () {
+            return 2 * (rong + dai);
+        }
+        this.draw = function () {
+            let ctx = document.getElementById('myCanvas').getContext('2d');
+            ctx.beginPath();
+            ctx.rect(300, 300, rong, dai);
+            ctx.stroke();
+        }
+    }
+
+    let rectangle = new Rectangle(300, 100);
+    rectangle.draw();
+    function changeSize() {
+        let rong = +prompt('Nhập vào chiều dài của hcn');
+        let dai = +prompt('Nhập vào chiều rộng của hcn');
+        alert(rectangle.getDienTich(rong, dai));
+        alert(rectangle.getChuVi(rong, dai));
+        rectangle.draw();
+    }
+
+</script>
+</body>
+</html>
