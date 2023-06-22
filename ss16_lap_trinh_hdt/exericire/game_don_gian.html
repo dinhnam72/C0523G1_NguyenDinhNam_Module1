@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>game_don_gian</title>
+</head>
+<body>
+<div id="game"></div>
+<script>
+    class SieuNhan {
+        constructor(image, top, left, speed, size) {
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.speed = speed;
+            this.size = size;
+            this.getSieuNhanGao = function () {
+                return '<img width ="' + this.size + '"' + 'hight ="' + this.size + '"' +
+                    'src ="' + this.image + '"' + ' style="top: ' + this.top + 'px; left:' + this.left + 'px;position:absolute;" />';
+            }
+            this.moveRight = function () {
+                this.left += 40;
+                setTimeout(start, this.speed);
+            }
+            this.moveBot = function () {
+                this.top += 40;
+                setTimeout(start, this.speed);
+            }
+
+        }
+    }
+
+    let sieuNhan = new SieuNhan('sieunhando1.png', 30, 30, 300, 200);
+
+    function start() {
+        if (sieuNhan.left < window.innerWidth - sieuNhan.size) {
+            sieuNhan.moveRight();
+        } else if (sieuNhan.top < window.innerHeight - sieuNhan.size) {
+                sieuNhan.moveBot()
+        }
+
+        document.getElementById('game').innerHTML = sieuNhan.getSieuNhanGao();
+    }
+
+    start();
+
+</script>
+</body>
+</html>
