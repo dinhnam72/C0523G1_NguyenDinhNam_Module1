@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bong_den</title>
+</head>
+<body>
+<script>
+    class ElectricLamp {
+        constructor() {
+            this.status = false;
+        }
+
+        turnOff() {
+            this.status = false;
+        }
+
+        turnOn() {
+            this.status = true;
+        }
+    }
+    class SwitchButton {
+        constructor() {
+            this.status = false;
+            this.lamp = null;
+        }
+        getLam() {
+            return this.lamp;
+        }
+        connectToLamp(electricLamp) {
+            this.lamp = electricLamp
+        }
+        switchOn() {
+            this.status = true;
+            this.lamp.turnOn();
+        }
+        switchOff() {
+            this.status = false;
+            this.lamp.turnOff();
+        }
+    }
+    let lamp = new ElectricLamp();
+    let button = new SwitchButton();
+    console.log('Lamp: ', lamp.status);
+    console.log('Button: ', button.status);
+    button.connectToLamp(lamp);
+    for (let i = 0; i < 10; i++) {
+        button.switchOn();
+        console.log('Lamp: ', lamp.status);
+        console.log('Button: ', button.status);
+    button.switchOff();
+        console.log('Lamp: ', lamp.status);
+        console.log('Button: ', button.status);
+    }
+//     button.switchOn();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+// ​
+//     button.switchOff();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+//
+//     button.switchOn();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+// ​
+//     button.switchOff();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+//
+//     button.switchOn();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+// ​
+//     button.switchOff();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+//
+//     button.switchOn();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+// ​
+//     button.switchOff();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+//
+//     button.switchOn();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+// ​
+//     button.switchOff();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+//
+//     button.switchOn();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+// ​
+//     button.switchOff();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+//
+//     button.switchOn();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+// ​
+//     button.switchOff();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+//
+//     button.switchOn();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+// ​
+//     button.switchOff();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+//
+//     button.switchOn();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+// ​
+//     button.switchOff();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+//
+//     button.switchOn();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+// ​
+//     button.switchOff();
+//     console.log('Lamp: ', lamp.status);
+//     console.log('Button: ', button.status);
+</script>
+</body>
+</html>
