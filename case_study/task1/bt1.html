@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt1</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Nhập lương của bạn (triệu vnđ):</td>
+        <td><input type="number" id="luong"></td>
+    </tr>
+    <tr>
+        <td>Tiền thuế thu nhập (triệu vnđ):</td>
+        <td><input type="number" id="thue"></td>
+    </tr>
+    <tr>
+        <td>Lương ròng (triệu vnđ):</td>
+        <td><input type="number" id="rong"></td>
+    </tr>
+</table>
+<button onclick="result()">Kết quả</button>
+<script>
+    function result() {
+        let x = document.getElementById('luong').value;
+        if (x >= 15) {
+            y = x * 20/100;
+            z = x - y;
+        } else if (x >= 7) {
+            y = x * 10/100;
+            z = x - y;
+        } else {
+            y = x * 5/100;
+            z = x - y;
+        }
+        document.getElementById('thue').value = y;
+        document.getElementById('rong').value = z;
+    }
+
+</script>
+</body>
+</html>
