@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>bt1</title>
 </head>
 <body>
-$END$
+<script>
+    let n;
+    do {
+        n = parseInt(prompt('Nhập số phần tử của mảng (n>=0)'));
+        if (n < 0) {
+            alert('Bạn nhập sai,xin hãy nhập lại (n>=0)');
+        }
+    } while (n < 0);
+    let a = [];
+    let b = [];
+    for (let i = 0; i < n; i++) {
+        a[i] = parseInt(prompt('Nhập phần tử thứ ' + i));
+    }
+    document.write(a + '<br>');
+    let sum = 0;
+    for (let i = 0; i < a.length; i++) {
+        for (j = 0; j <= i; j++) {
+            sum += a[j];
+        }
+        b.push(sum);
+        sum = 0;
+    }
+    document.write(b);
+</script>
 </body>
 </html>

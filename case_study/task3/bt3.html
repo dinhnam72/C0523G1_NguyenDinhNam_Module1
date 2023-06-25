@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>bt3</title>
 </head>
 <body>
-$END$
+<script>
+    function tempArray(n) {
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt('Nhập vào phàn tử thứ ' + i));
+        }
+        return arr;
+    }
+
+    let numerators = tempArray(5);
+    let denominators = tempArray(5);
+    let max = numerators[0] / denominators[0];
+    let index = 0;
+    for (let i = 1; i < numerators.length; i++) {
+        if (max < numerators[i] / denominators[i]) {
+            max = numerators[i] / denominators[i];
+            index = i;
+        }
+    }
+
+    document.write('numerators: ' + numerators + '<br>');
+    document.write('denominators: ' + denominators + '<br>');
+    document.write('max:' + max + '<br>');
+    document.write('chỉ số: ' + index);
+</script>
+
 </body>
 </html>
