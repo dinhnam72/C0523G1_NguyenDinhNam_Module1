@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt4</title>
+</head>
+<body>
+<script>
+    let listMenu;
+    let sum = 0;
+
+    let arr = ['cafe', 'camvat', 'carot', 'cachua', 'nuocloc', 'nuocdua'];
+    do {
+        listMenu = +prompt('Menu thức uống: \n 1. Cafe \n 2. Cam vắt \n 3. Nước ép cà rốt \n 4. Nước ép cà chua \n 5. Nước lọc \n 6. Nước dừa \n 7. Tính tiền');
+        let number = 0;
+        switch (listMenu) {
+            case 1:
+                number = +prompt('Nhập số lượng ly ' + arr[0] + '(10000 vnđ) bạn muốn:');
+                sum += number * 10000;
+                break;
+            case 2:
+                number = +prompt('Nhập số lượng ly ' + arr[1] + '(15000 vnđ) bạn muốn:');
+                sum += number * 15000;
+                break;
+            case 3:
+                number = +prompt('Nhập số lượng ly ' + arr[2] + '(20000 vnđ) bạn muốn:');
+                sum += number * 20000;
+                break;
+            case 4:
+                number = +prompt('Nhập số lượng ly ' + arr[3] + '(20000 vnđ) bạn muốn:');
+                sum += number * 20000;
+                break;
+            case 5:
+                number = +prompt('Nhập số lượng ly ' + arr[4] + '(5000 vnđ) bạn muốn:');
+                sum += number * 5000;
+                break;
+            case 6:
+                number = +prompt('Nhập số lượng ly ' + arr[5] + '(15000 vnđ) bạn muốn:');
+                sum += number * 15000;
+                break;
+        }
+        if (listMenu == 7) {
+            alert('Cảm ơn bạn đã gọi nước, đây là hóa đơn của bạn')
+        }
+    } while (listMenu < 7)
+    alert('Số tiền cần thanh toán của bạn: ' + sum + 'VNĐ');
+
+
+</script>
+
+
+</body>
+</html>
