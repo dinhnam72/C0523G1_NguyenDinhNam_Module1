@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt2</title>
+</head>
+<body>
+<script>
+    let s = 'cabca';
+    let arr = s.split('');
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (newArr.indexOf(arr[i]) == -1) {
+            newArr.push(arr[i]);
+        }
+    }
+    document.write('Các ký tự khác nhau: '+ newArr.sort() + '<br>');
+    document.write('Số ký tự khác nhau là: '+ newArr.length);
+</script>
+</body>
+</html>

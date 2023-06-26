@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt1</title>
+</head>
+<body>
+<script>
+    function chuanHoaChuoi(chuoi) {
+        debugger;
+        let chuoiDaChuanHoa = [];
+        let cacTuTrongChuoi = chuoi.split(' ');
+        for (let i = 0; i < cacTuTrongChuoi.length; i++) {
+            let tu = cacTuTrongChuoi[i].trim();
+            tu = tu.charAt(0).toUpperCase() + tu.slice(1).toLowerCase();
+            if (tu !== '') {
+                chuoiDaChuanHoa.push(tu);
+            }
+        }
+        return chuoiDaChuanHoa.join(' ').toString();
+    }
+    let chuoi = "NguyeN   ThanH vIET "
+    document.write("Xâu trước khi chuẩn hóa: " + chuoi + "<br>");
+
+    document.write("Xâu sau khi chuẩn hóa: " + chuanHoaChuoi(chuoi) + "<br>");
+</script>
+</body>
+</html>
