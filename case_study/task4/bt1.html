@@ -6,23 +6,38 @@
 </head>
 <body>
 <script>
-    function chuanHoaChuoi(chuoi) {
-        debugger;
-        let chuoiDaChuanHoa = [];
-        let cacTuTrongChuoi = chuoi.split(' ');
-        for (let i = 0; i < cacTuTrongChuoi.length; i++) {
-            let tu = cacTuTrongChuoi[i].trim();
-            tu = tu.charAt(0).toUpperCase() + tu.slice(1).toLowerCase();
-            if (tu !== '') {
-                chuoiDaChuanHoa.push(tu);
+    function xauKyTu(chuoi) {
+        let dsTu = chuoi.split(' ');
+        let tuChuaChuanHoa = [];
+        let tuChuanHoa = [];
+
+
+        for (let i = 0; i < dsTu.length; i++) {
+            dsTu[i].trim();
+            if (dsTu[i] !== "") {
+                tuChuaChuanHoa.push(dsTu[i]);
+            }
+
+        }
+        document.write('Xâu trước khi chuẩn hóa: ' + tuChuaChuanHoa.join(' ') + '<br>');
+        for (let i = 0; i < tuChuaChuanHoa.length; i++) {
+            tuChuanHoa.push(tuChuaChuanHoa[i].charAt(0).toUpperCase() + tuChuaChuanHoa[i].slice(1).toLowerCase());
+        }
+        document.write('Xâu sau khi chuẩn hóa: ' + tuChuanHoa.join(' ') + '<br>');
+        let max = tuChuanHoa[0];
+        for (let j = 1; j < tuChuanHoa.length; j++) {
+            if (max.length < tuChuanHoa[j].length) {
+                max = tuChuanHoa[j];
             }
         }
-        return chuoiDaChuanHoa.join(' ').toString();
+        return 'Từ dài nhất: ' + max;
     }
-    let chuoi = "NguyeN   ThanH vIET "
-    document.write("Xâu trước khi chuẩn hóa: " + chuoi + "<br>");
 
-    document.write("Xâu sau khi chuẩn hóa: " + chuanHoaChuoi(chuoi) + "<br>");
+    let chuoi = 'ngUYen  dinH  nAM';
+    let result = xauKyTu(chuoi);
+    document.write(result);
+
+
 </script>
 </body>
 </html>
