@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt1</title>
+</head>
+<body>
+<script>
+    let n;
+    let m;
+    do {
+        n = parseInt(prompt('Nhập vào số hàng của mảng (n>0):'));
+        m = parseInt(prompt('Nhập vào số cột của mảng (m>0):'));
+        if (n <= 0 || m <= 0) {
+            alert('Yêu cầu bạn nhập lại số (n,m>0)');
+        }
+    } while (n <= 0 || m <= 0);
+    let arr = [];
+    let arr1 = [];
+    let sum = 0;
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < m; j++) {
+            arr1.push(+prompt('Nhập phần tử thứ ' + i + j));
+        }
+        arr.push(arr1);
+        arr1 = [];
+    }
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            if (arr[i][j] % 2 == 0) {
+                sum += arr[i][j];
+            }
+        }
+
+    }
+    document.write(arr);
+    document.write('<br>');
+    document.write('Tổng các số chẵn của mảng: ' + sum);
+</script>
+</body>
+</html>
