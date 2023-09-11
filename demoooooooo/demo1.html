@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let row = +prompt("Nhập hàng");
+    let col = +prompt("Nhập cột");
+    let arr = [];
+    for (let i = 0; i < row; i++) {
+        arr[i] = [];
+        for (let j = 0; j < col; j++) {
+            arr[i][j] = +prompt("Nhập phần tử hàng " + (i + 1) + " cột " + (j + 1));
+        }
+    }
+    console.log( arr );
+
+
+</script>
+</body>
+</html>

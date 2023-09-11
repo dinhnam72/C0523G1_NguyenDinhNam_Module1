@@ -7,21 +7,20 @@
 <body>
 <script>
     let arrNgoiSao = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
-    let arrChomSao = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', ' Ursa Major', 'Leo']
+    let arrChomSao = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', ' Ursa Major', 'Leo'];
 
     function chomSaoTuongUng(ngoisao) {
         for (let index in arrNgoiSao) {
             if (str.trim().toLowerCase() === arrNgoiSao[index].trim().toLowerCase()) {
                 return arrChomSao[index];
             }
-
         }
         return 'Không có chòm sao nào tương ứng';
     }
 
     let str = prompt('Nhập ngôi sao bạn muốn:');
     let chomSao = chomSaoTuongUng(str);
-    alert(chomSao);
+    document.write(chomSao);
 </script>
 </body>
 </html>

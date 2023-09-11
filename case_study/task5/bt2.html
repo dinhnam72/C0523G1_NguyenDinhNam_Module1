@@ -20,7 +20,6 @@
     let newArr = [];
     let soNguyenTo = [];
     let count = 0;
-    let countSNT =0;
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < m; j++) {
             arr1.push(+prompt('Nhập phần tử thứ ' + i + j));
@@ -33,24 +32,25 @@
             newArr.push(arr[i][j]);
         }
     }
+
     for (let i = 0; i < newArr.length; i++) {
-        for (let j = 1; j < newArr[i]; j++) {
+        for (let j = 1; j <= newArr[i]/2; j++) {
             if (newArr[i] % j == 0) {
                 count++;
             }
         }
         if (count == 1) {
             soNguyenTo.push(newArr[i]);
-            countSNT++;
         }
         count = 0;
 
     }
 
 
+
     document.write(arr + '<br>');
     document.write('Các số nguyên tố: ' + soNguyenTo + '<br>');
-    document.write('Tổng số nguyên tố có trong mảng: ' + countSNT);
+    document.write('Tổng số nguyên tố có trong mảng: ' + soNguyenTo.length);
 
 
 </script>

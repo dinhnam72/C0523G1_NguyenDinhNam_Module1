@@ -13,16 +13,16 @@
     arr.push(a);
     arr.push(b);
     arr.push(c);
-    let ketQua = maxNumber(arr);
+    let ketQua = minNumber(arr);
 
-    function maxNumber(arr) {
-        let max = arr[0];
+    function minNumber(arr) {
+        let min = arr[0];
         for (let i = 1; i < arr.length; i++) {
-            if (max < arr[i]) {
-                max = arr[i];
+            if (min > arr[i]) {
+                min = arr[i];
             }
         }
-        return 'Giá trị lớn nhất là: ' + max;
+        return 'Giá trị nhỏ nhất là: ' + min;
     }
 
     document.write(ketQua);

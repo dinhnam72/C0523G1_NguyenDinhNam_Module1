@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="themHocVien()">Thêm Học Viên</button>
+<button onclick="xoaHocVien()">Xóa Học Viên</button>
+<button onclick="suaThongTin()">Sửa thông tin Học Viên</button>
+<div id="danhSach"></div>
+<script>
+    class ThongTinHocVien {
+        constructor(ma, ten, lop, email, ngaySinh, module) {
+            this.ma = ma;
+            this.ten = ten;
+            this.lop = lop;
+            this.email = email;
+            this.ngaySinh = ngaySinh;
+            this.module = module;
+        }
+    }
+
+    let hocVien1 = new ThongTinHocVien('HV-0001', 'Bùi Ngô Hà Nhi', 'C0523G1', 'TfofmisN1@gmail.com', '15/03/1998', '1');
+    let hocVien2 = new ThongTinHocVien('HV-0002', 'Nguyễn Hồng Nhung', 'C0523G1', 'TfofmisN2@gmail.com', '31/07/1998', '1');
+    let hocVien3 = new ThongTinHocVien('HV-0003', 'Nguyễn Ánh Nguyệt', 'C0523G1', 'TfofmisN3@gmail.com', '14/09/2000', '1');
+    let hocVien = [hocVien1, hocVien2, hocVien3];
+
+    function dsHocVien() {
+        let tableStr = '<table  style="border-collapse: collapse; text-align: center" border="1px">';
+        tableStr +=
+            "<tr>\n" +
+            "        <th>STT</th>\n" +
+            "        <th>Mã Học Viên</th>\n" +
+            "        <th>Tên Học Viên</th>\n" +
+            "        <th>Lớp</th>\n" +
+            "        <th>Email</th>\n" +
+            "        <th>Ngày Sinh</th>\n" +
+            "        <th>Module</th>\n" +
+            "</tr>"
+        for (let i = 0; i < hocVien.length; i++) {
+            tableStr +=
+                "<tr>\n" +
+                "        <td>" + (i + 1) + "</td>\n" +
+                "        <td>" + hocVien[i].ma + "</td>\n" +
+                "        <td>" + hocVien[i].ten + "</td>\n" +
+                "        <td>" + hocVien[i].lop + "</td>\n" +
+                "        <td>" + hocVien[i].email + "</td>\n" +
+                "        <td>" + hocVien[i].ngaySinh + "</td>\n" +
+                "        <td>" + hocVien[i].module + "</td>\n" +
+                "</tr>"
+        }
+        tableStr += "</table>"
+        document.getElementById('danhSach').innerHTML = tableStr;
+    }
+
+    dsHocVien(hocVien);
+
+    function themHocVien() {
+        let ma = prompt('Nhập mã học viên');
+        let ten = prompt('Nhập tên học viên');
+        let lop = prompt('Nhập lớp học viên');
+        let email = prompt('Nhập email học viên');
+        let ngaySinh = prompt('Nhập ngày sinh học viên');
+        let module = prompt('Nhập module của học viên');
+        let hocVien4 = new ThongTinHocVien(ma, ten, lop, email, ngaySinh, module);
+        hocVien.push(hocVien4);
+        dsHocVien(hocVien);
+    }
+
+    function xoaHocVien() {
+        let flag = false;
+        let mhv = prompt('Nhập mã học viên bạn muốn xóa');
+        for (let i = 0; i < hocVien.length; i++) {
+            if (mhv == hocVien[i].ma) {
+                if (confirm('Bạn có cần suy nghĩ thêm không "_"?')) ;
+                hocVien.splice(i, 1);
+                flag = true;
+            }
+        }
+        if (flag == false) {
+            alert('Mã này không có trong hệ thống. XIn hãy nhập lại nhé');
+        }
+        dsHocVien(hocVien);
+    }
+
+    function suaThongTin() {
+        let flag = false;
+        let mhv1 = prompt('Nhập mã học viên bạn muốn sửa');
+        for (let i = 0; i < hocVien.length; i++) {
+            if (mhv1 == hocVien[i].ma) {
+                hocVien[i].ma = prompt('Nhập lại mã học viên');
+                hocVien[i].ten = prompt('Nhập lại tên học viên');
+                hocVien[i].lop = prompt('Nhập lại lớp học viên');
+                hocVien[i].email = prompt('Nhập lại email học viên');
+                hocVien[i].ngaySinh = prompt('Nhập lại ngày sinh của học viên');
+                hocVien[i].module = prompt('Nhập lại module học viên');
+                flag = true;
+            }
+        }
+        if (flag == false) {
+            alert('Mã này không có trong hệ thống. XIn hãy nhập lại nhé');
+        }
+        dsHocVien(hocVien);
+    }
+</script>
+</body>
+</html>

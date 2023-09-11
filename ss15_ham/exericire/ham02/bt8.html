@@ -2,22 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>bt7</title>
+    <title>bt8</title>
 </head>
 <body>
 <script>
-    function swap(arr) {
-        let temp = arr[0];
-        arr[0] = arr[1];
-        arr[1] = temp;
+    function daoMang(arr) {
+        for (let i = 0; i < arr.length / 2; i++) {
+            let temp = arr[i];
+            arr[i] = arr[arr.length - i - 1];
+            arr[arr.length - i - 1] = temp;
+        }
     }
 
-    let x = 1;
-    let y = 2;
-    let c = [x, y];
-    document.write(c + '<br>');
-    swap(c)
-    document.write(c);
+    let n;
+    do {
+        n = +prompt('Nhập chiều dài mảng lớn hơn 0')
+        if (n < 0) {
+            alert('Số nhập vào phải lớn hơn 0, vui lòng nhập lại')
+        }
+    } while (n <= 0)
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr.push(+prompt('nhập phần tử thứ ' + (i + 1)));
+    }
+    document.write('mảng sau khi được nhập: ' + arr + '<br/>');
+    daoMang(arr);
+    document.write('mảng sau khi được đảo ngược : ' + arr);
 </script>
 </body>
 </html>

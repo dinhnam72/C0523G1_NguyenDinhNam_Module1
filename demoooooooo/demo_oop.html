@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="themHocVien()">Thêm Học Viên</button>
+<button onclick="xoaHocVien()">Xóa Học Viên</button>
+<button onclick="suaHocVien()">Sửa Thông Tin Học Viên</button>
+<div id="hienThiHocVien"></div>
+<script>
+    class DanhSachHocVien {
+        constructor(ma, ten, lop, email, ngaySinh, module) {
+            this.ma = ma;
+            this.ten = ten;
+            this.lop = lop;
+            this.email = email;
+            this.ngaySinh = ngaySinh;
+            this.module = module;
+        }
+    }
+
+    let hocVien1 = new DanhSachHocVien('HV-0001', 'Nguyễn Thị A', 'C0523G1', 'a@gmail.com', '12/04/98', '1');
+    let hocVien2 = new DanhSachHocVien('HV-0002', 'Nguyễn Thị B', 'C0523G1', 'a@gmail.com', '12/04/98', '1');
+    let hocVien3 = new DanhSachHocVien('HV-0003', 'Nguyễn Thị C', 'C0523G1', 'a@gmail.com', '12/04/98', '1');
+    let hocVien = [];
+    hocVien.push(hocVien1, hocVien2, hocVien3);
+
+    function dsHocVien() {
+        let tableStr = "<table border='1px' style='border-collapse: collapse'>"
+        tableStr += "<tr>\n" +
+            "        <th>STT</th>\n" +
+            "        <th>Mã học viên</th>\n" +
+            "        <th>Tên học viên</th>\n" +
+            "        <th>Lớp học viên</th>\n" +
+            "        <th>Email</th>\n" +
+            "        <th>Ngày sinh</th>\n" +
+            "        <th>Module</th>\n" +
+            "    </tr>"
+        for (let i = 0; i < hocVien.length; i++) {
+            tableStr += "<tr>\n" +
+                "        <td>" + (i + 1) + "</td>\n" +
+                "        <td>" + hocVien[i].ma + "</td>\n" +
+                "        <td>" + hocVien[i].ten + "</td>\n" +
+                "        <td>" + hocVien[i].lop + "</td>\n" +
+                "        <td>" + hocVien[i].email + "</td>\n" +
+                "        <td>" + hocVien[i].ngaySinh + "</td>\n" +
+                "        <td>" + hocVien[i].module + "</td>\n" +
+                "</tr>"
+        }
+        tableStr += "</table>"
+        document.getElementById("hienThiHocVien").innerHTML = tableStr;
+    }
+
+    dsHocVien();
+
+    function themHocVien() {
+        let maHV = prompt('Nhập mã học viên');
+        let tenHV = prompt('Nhập tên học viên');
+        let lopHV = prompt('Nhập lớp học viên');
+        let emailHV = prompt('Nhập email học viên');
+        let ngaySinhHV = prompt('Nhập ngày sinh học viên');
+        let moduleHV = prompt('Nhập module học viên');
+        let hocVien4 = new DanhSachHocVien(maHV, tenHV, lopHV, emailHV, ngaySinhHV, moduleHV);
+        hocVien.push(hocVien4);
+        dsHocVien();
+    }
+
+    function xoaHocVien() {
+        let flag = false;
+        let maKiemTra = prompt('Nhập mã học viên');
+        for (let i = 0; i < hocVien.length; i++) {
+            if (maKiemTra == hocVien[i].ma) {
+                if (confirm('Bạn có cần suy nghĩ lại không ?')) {
+                    hocVien.splice(i, 1);
+                    flag = true;
+                }
+            }
+        }
+        if (flag == false) {
+            alert('Bạn nhập mã không có trong hệ thống. Xin hãy nhập lại');
+        }
+        dsHocVien();
+    }
+</script>
+</body>
+</html>
